@@ -4,21 +4,73 @@
         <script src="infixToPostfix.js"></script>
         <script src="postfixEvaluator.js"></script>
     </head>
+    <style>
+        button
+        {
+            padding: 3px;
+            width : 25px;
+            margin: 5px;
+        }
+        #ans
+        {
+            margin:5px;
+            width : 150px;
+            font-size: 20px;
+        }
+        #inp
+        {
+            width : 200px;
+            margin: 5px;
+        }
+        #d
+        {
+            margin : 200px;
+        }
+    </style>
     <body>
-
-        <h1>My Calculator</h1>
-        <p id="expr"></p>
-        <p id="postfix"></p>
-        <p id="result"></p>
+        <div id="d">
+            <h1>My Calculator</h1>
+            <input id="inp" type="text" value="">
+            <br>
+            <button id="1" onclick="addnum(1)" >1</button> 
+            <button id="2" onclick="addnum(2)" >2</button> 
+            <button id="3" onclick="addnum(3)" >3</button> 
+            <button id="4" onclick="addnum(4)" >4</button> 
+            <button id="5" onclick="addnum(5)" >5</button> 
+            <button id="6" onclick="addnum(6)" >6</button> 
+            <br>
+            <button id="7" onclick="addnum(7)" >7</button> 
+            <button id="8" onclick="addnum(8)" >8</button> 
+            <button id="9" onclick="addnum(9)" >9</button>
+            <button id="0" onclick="addnum(0)" >0</button>
+            <button id="dec" onclick="addnum('.')" >.</button>
+            <button id="plus" onclick="addnum('+')" >+</button>
+            <br>
+            <button id="minus" onclick="addnum('-')" >-</button>
+            <button id="cross" onclick="addnum('*')" >*</button>
+            <button id="divide" onclick="addnum('/')" >/</button>
+            <button id="exp" onclick="addnum('^')" >^</button>
+            <button id="openbr" onclick="addnum('(')" >(</button>
+            <button id="closebr" onclick="addnum(')')" >)</button>
+            <br>
+            <button id="ans" onclick="passval()" >=</button> 
+        </div>
 
     </body>
 
     <script>
-        const expr = '5.45+6*(9-(3.21+2)*1.22)*5.23^2.1';
-        const postfix = val(expr);
-        const result = postEval(postfix);
-        document.getElementById("expr").innerHTML = expr
-        document.getElementById("postfix").innerHTML = postfix;
-        document.getElementById("result").innerHTML= result;
+
+        function addnum(x)
+        {
+            document.getElementById("inp").value = document.getElementById("inp").value + x;
+        }
+
+        function passval()
+        {
+            expr = document.getElementById("inp").value;
+            postfix = val(expr);
+            result = postEval(postfix);
+            document.getElementById("inp").value = result;
+        }
     </script>
 </html>
