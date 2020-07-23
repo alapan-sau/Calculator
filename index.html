@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <head>
+        <title>Page Title</title>
+        <script src="infixToPostfix.js"></script>
+    </head>
+    <body>
+
+        <h1>My Calculator</h1>
+        <p id="expr"></p>
+        <p id="postfix"></p>
+        <p id="result"></p>
+
+    </body>
+
+    <script>
+        const expr = '5.45+6*(9-(3.21+2)*1.22)*5.23^2.1';
+        document.getElementById("expr").innerHTML = expr
+        document.getElementById("postfix").innerHTML = val(expr);
+        //document.getElementById("result"),innerHTML = calculate();
+    </script>
+</html>
