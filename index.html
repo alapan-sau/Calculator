@@ -2,6 +2,7 @@
     <head>
         <title>Page Title</title>
         <script src="infixToPostfix.js"></script>
+        <script src="postfixEvaluator.js"></script>
     </head>
     <body>
 
@@ -14,8 +15,10 @@
 
     <script>
         const expr = '5.45+6*(9-(3.21+2)*1.22)*5.23^2.1';
+        const postfix = val(expr);
+        const result = postEval(postfix);
         document.getElementById("expr").innerHTML = expr
-        document.getElementById("postfix").innerHTML = val(expr);
-        //document.getElementById("result"),innerHTML = calculate();
+        document.getElementById("postfix").innerHTML = postfix;
+        document.getElementById("result").innerHTML= result;
     </script>
 </html>

@@ -55,7 +55,6 @@ function val(expr){                                        // evaluates the post
         postfix.push(op.pop());
         postfix.push(" ");
     }
-
     const result = postfix.join("").replace(/  +/g, ' ').trim();
     console.log(result);
     return result;
