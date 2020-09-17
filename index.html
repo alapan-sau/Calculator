@@ -24,7 +24,14 @@
         }
         #d
         {
-            margin : 200px;
+            margin-left : 600px;
+            margin-top: 100px;
+        }
+        #C
+        {
+            margin:2px;
+            width : 60px;
+            font-size: 15px;
         }
     </style>
     <body>
@@ -53,7 +60,8 @@
             <button id="openbr" onclick="addnum('(')" >(</button>
             <button id="closebr" onclick="addnum(')')" >)</button>
             <br>
-            <button id="ans" onclick="passval()" >=</button> 
+            <button id="ans" onclick="passval()" >=</button>
+            <button id="C" onclick="clears()" >C</button>
         </div>
 
     </body>
@@ -71,6 +79,10 @@
             postfix = val(expr);
             result = postEval(postfix);
             document.getElementById("inp").value = result;
+        }
+        function clears()
+        {
+            document.getElementById("inp").value= "";
         }
     </script>
 </html>

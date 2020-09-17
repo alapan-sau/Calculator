@@ -2,7 +2,7 @@ function topp(arr){
     return arr[arr.length-1];
 }
 
-function preced(ch){                                        // sets the order of prededence
+function preced(ch){                                       // sets the order of prededence
     if (ch == '+' || ch == '-') return 1;
     else if(ch == '*' || ch=='/') return 2;
     else if(ch == '^') return 3;
